@@ -1,0 +1,44 @@
+﻿{
+  "scenario_id": "S001",
+  "required_factors": [
+    "FINANCIAL_CONTAGION",
+    "DOMESTIC_DIRECT_EXPOSURE",
+    "POLICY_SAFETY_NET",
+    "LIQUIDITY_RISK",
+    "FINANCIAL_SOUNDNESS"
+  ],
+  "supporting_factors": [
+    "SYSTEMIC_RISK",
+    "MARKET_VOLATILITY",
+    "RISK_APPETITE",
+    "FOREIGN_INVESTOR_FLOW",
+    "SECTOR_RELATIVE_STRENGTH",
+    "CREDIT_DEFAULT_RISK",
+    "EVENT_UNCERTAINTY"
+  ],
+  "portfolio_factors": [
+    "CONCENTRATION_RISK",
+    "DIVERSIFICATION_EFFECT",
+    "ASSET_CORRELATION_RISK",
+    "CASH_BUFFER"
+  ],
+  "risk_increase_factors": [
+    "FINANCIAL_CONTAGION",
+    "LIQUIDITY_RISK",
+    "SYSTEMIC_RISK",
+    "MARKET_VOLATILITY",
+    "RISK_APPETITE",
+    "FOREIGN_INVESTOR_FLOW",
+    "CREDIT_DEFAULT_RISK",
+    "EVENT_UNCERTAINTY",
+    "CONCENTRATION_RISK",
+    "ASSET_CORRELATION_RISK"
+  ],
+  "risk_mitigating_factors": [
+    "DOMESTIC_DIRECT_EXPOSURE",
+    "POLICY_SAFETY_NET",
+    "FINANCIAL_SOUNDNESS",
+    "DIVERSIFICATION_EFFECT",
+    "CASH_BUFFER"
+  ]
+}

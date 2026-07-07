@@ -1,0 +1,27 @@
+{
+  "M1": [
+    "missing_required_factor",
+    "missing_supporting_factor"
+  ],
+  "M2": [
+    "misinterpreted_direction",
+    "fact_distortion",
+    "unsupported_claim"
+  ],
+  "M3": [
+    "ignored_mitigating_factor",
+    "ignored_uncertainty",
+    "no_counter_scenario"
+  ],
+  "M4": [
+    "action_mismatch",
+    "excessive_action",
+    "passive_action",
+    "missing_position_size"
+  ],
+  "M5": [
+    "cause_effect_gap",
+    "internal_contradiction",
+    "conclusion_jump"
+  ]
+}
