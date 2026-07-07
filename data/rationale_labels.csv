@@ -1,0 +1,10 @@
+rationale_id,answer_id,rationale_text,gold_factor_ids
+R001,A001,"해외 은행권 불안은 국내 금융주에도 단기적으로 부정적인 심리를 만들 수 있다.","FINANCIAL_CONTAGION;DOMESTIC_DIRECT_EXPOSURE"
+R002,A001,"외국인 매도와 시장 변동성 확대는 금융주 하락 압력으로 작용할 수 있다.","FOREIGN_INVESTOR_FLOW;MARKET_VOLATILITY"
+R003,A001,"국내 금융기관의 직접 노출도가 제한적이다.","DOMESTIC_DIRECT_EXPOSURE"
+R004,A001,"금융당국의 유동성 공급 가능성이 있다.","POLICY_SAFETY_NET;LIQUIDITY_RISK"
+R005,A001,"주요 금융지주의 자본비율이 양호하다.","FINANCIAL_SOUNDNESS"
+R006,A002,"해외 은행 문제가 커지면 국내 금융주도 영향을 받을 수 있다.","FINANCIAL_CONTAGION;DOMESTIC_DIRECT_EXPOSURE"
+R007,A002,"금융주는 불안할 때 변동성이 커질 수 있다.","MARKET_VOLATILITY"
+R008,A003,"은행이 위험하다고 하니까 금융주는 다 팔아야 한다.","FINANCIAL_CONTAGION"
+R009,A003,"이런 뉴스가 나오면 무조건 폭락할 것 같다.","FINANCIAL_CONTAGION;MARKET_VOLATILITY"
