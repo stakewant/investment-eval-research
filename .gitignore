@@ -27,3 +27,7 @@ outputs/*.json
 
 # Logs
 *.log
+
+# Trained models
+models/*.joblib
+!models/.gitkeep
