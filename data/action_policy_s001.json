@@ -1,0 +1,35 @@
+{
+  "scenario_id": "S001",
+  "factor_impacts": {
+    "FINANCIAL_CONTAGION": -2.0,
+    "LIQUIDITY_RISK": -2.0,
+    "SYSTEMIC_RISK": -2.0,
+    "CREDIT_DEFAULT_RISK": -2.0,
+    "CONCENTRATION_RISK": -2.0,
+
+    "MARKET_VOLATILITY": -1.0,
+    "FOREIGN_INVESTOR_FLOW": -1.0,
+    "RISK_APPETITE": -1.0,
+    "EVENT_UNCERTAINTY": -1.0,
+    "ASSET_CORRELATION_RISK": -1.0,
+
+    "DOMESTIC_DIRECT_EXPOSURE": 1.0,
+    "POLICY_SAFETY_NET": 1.0,
+    "FINANCIAL_SOUNDNESS": 1.0,
+    "DIVERSIFICATION_EFFECT": 1.0,
+    "CASH_BUFFER": 1.0,
+
+    "SECTOR_RELATIVE_STRENGTH": 0.0
+  },
+  "action_scores": {
+    "매수": 2.0,
+    "일부 매수": 1.0,
+    "관망": 0.0,
+    "신규 매수 보류": -0.5,
+    "일부 비중 축소": -1.0,
+    "비중 축소": -1.0,
+    "매도": -2.0,
+    "전량 매도": -3.0,
+    "인버스 ETF 일부 편입": -1.0
+  }
+}
