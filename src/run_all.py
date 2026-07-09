@@ -27,6 +27,7 @@ def main():
     run("python src/rule_score.py")
     run("python src/evaluate_against_human.py")
     run("python src/make_tables.py")
+    run("python src/analyze_score_errors.py")
 
     print("\n[DONE] 전체 평가 파이프라인 실행 완료")
 

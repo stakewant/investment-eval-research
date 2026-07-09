@@ -104,23 +104,68 @@ def score_m3_risk_awareness(mentioned, tags, active):
     return max(1, min(5, score))
 
 
-def score_m4_action_alignment(tags):
+def score_m4_action_alignment(tags, mentioned=None):
     """
     M4. 행동-근거 정합성
-    행동 불일치, 과도한 행동, 비중 판단 부재를 감점한다.
+
+    기존에는 행동 관련 진단 태그만 보고 감점했기 때문에,
+    근거 요인이 거의 없거나 unsupported_claim/cause_effect_gap이 있는 답변도
+    M4가 과도하게 높게 나오는 문제가 있었다.
+
+    수정 후에는 다음을 함께 반영한다.
+    - 언급 요인 수
+    - 행동 관련 태그
+    - 근거 부족 태그
+    - 결론 비약 / 원인-결과 연결 부족
     """
+    if mentioned is None:
+        mentioned = []
+
+    tag_set = set(tags)
+    mentioned_count = len(set(mentioned))
+
     score = 5
 
-    if "action_mismatch" in tags:
+    # 근거 요인이 없거나 거의 없는 경우 행동 정합성을 높게 줄 수 없음
+    if mentioned_count == 0:
         score -= 3
-    if "excessive_action" in tags:
-        score -= 2
-    if "passive_action" in tags:
-        score -= 2
-    if "missing_position_size" in tags:
+    elif mentioned_count == 1:
         score -= 1
 
-    return max(1, score)
+    # 직접적인 행동-근거 불일치
+    if "action_mismatch" in tag_set:
+        score -= 3
+
+    if "excessive_action" in tag_set:
+        score -= 2
+
+    if "passive_action" in tag_set:
+        score -= 2
+
+    if "missing_position_size" in tag_set:
+        score -= 1
+
+    # 근거 자체가 약하면 행동 정합성도 낮아져야 함
+    if "unsupported_claim" in tag_set:
+        score -= 2
+
+    if "conclusion_jump" in tag_set:
+        score -= 2
+
+    if "cause_effect_gap" in tag_set:
+        score -= 1
+
+    # 필수 요인이나 완화 요인을 거의 보지 않은 경우 행동 강도 판단도 불안정함
+    if "missing_required_factor" in tag_set and mentioned_count <= 2:
+        score -= 1
+
+    if "ignored_mitigating_factor" in tag_set:
+        score -= 1
+
+    if "ignored_uncertainty" in tag_set:
+        score -= 1
+
+    return max(1, min(5, score))
 
 
 def score_m5_logical_coherence(tags):
@@ -155,7 +200,7 @@ def compute_rule_scores():
         m1 = score_m1_key_factor_identification(mentioned, active)
         m2 = score_m2_factual_consistency(tags)
         m3 = score_m3_risk_awareness(mentioned, tags, active)
-        m4 = score_m4_action_alignment(tags)
+        m4 = score_m4_action_alignment(tags, mentioned)
         m5 = score_m5_logical_coherence(tags)
 
         final_score = round((m1 + m2 + m3 + m4 + m5) / 5, 3)
