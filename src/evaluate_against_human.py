@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
 from sklearn.metrics import mean_absolute_error
-
+from io_utils import read_table
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
@@ -15,8 +15,8 @@ METRICS = ["M1", "M2", "M3", "M4", "M5"]
 
 
 def evaluate():
-    human = pd.read_csv(DATA_DIR / "human_labels.csv")
-    system = pd.read_csv(OUTPUT_DIR / "system_scores.csv")
+    human = read_table(DATA_DIR / "human_labels.csv")
+    system = read_table(OUTPUT_DIR / "system_scores.csv")
 
     # 사람 점수 평균
     human_avg = (

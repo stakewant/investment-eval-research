@@ -1,14 +1,14 @@
 from pathlib import Path
 
 import pandas as pd
-
+from io_utils import read_table
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_DIR = ROOT / "outputs"
 
 
 def make_tables():
-    report = pd.read_csv(OUTPUT_DIR / "score_eval_report.csv")
+    report = read_table(OUTPUT_DIR / "score_eval_report.csv")
 
     table = report.rename(columns={
         "metric": "Evaluation Dimension",

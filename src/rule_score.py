@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 import pandas as pd
-
+from io_utils import read_table
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
@@ -144,7 +144,7 @@ def score_m5_logical_coherence(tags):
 
 def compute_rule_scores():
     active = load_active_factors()
-    labels = pd.read_csv(DATA_DIR / "human_labels.csv")
+    labels = read_table(DATA_DIR / "human_labels.csv")
 
     rows = []
 

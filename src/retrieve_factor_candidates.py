@@ -26,7 +26,7 @@ def build_factor_text(row):
 
 def main():
     factor_path = DATA_DIR / "factor_dictionary_s001.csv"
-    rationale_path = DATA_DIR / "rationale_labels.csv"
+    rationale_path = DATA_DIR / "rational_labels.csv"
 
     if not factor_path.exists():
         raise FileNotFoundError(f"Missing file: {factor_path}")

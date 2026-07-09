@@ -70,10 +70,10 @@ def topk_labels(proba_row, factor_ids, k=5):
 
 
 def main():
-    rationale_path = DATA_DIR / "rationale_labels.csv"
+    rationale_path = DATA_DIR / "rational_labels.csv"
 
     if not rationale_path.exists():
-        raise FileNotFoundError("data/rationale_labels.csv 파일이 없습니다.")
+        raise FileNotFoundError("data/rational_labels.csv 파일이 없습니다.")
 
     active = load_active_factors()
     factor_ids = get_all_factor_ids(active)

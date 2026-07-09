@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 import pandas as pd
-
+from io_utils import read_table
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
@@ -71,7 +71,7 @@ def main():
     else:
         warnings.append("diagnostic_tags.json 파일이 없어 태그 검증은 건너뜀")
 
-    labels = pd.read_csv(labels_path, encoding="utf-8-sig")
+    labels = read_table(labels_path)
 
     for col in REQUIRED_COLUMNS:
         if col not in labels.columns:
